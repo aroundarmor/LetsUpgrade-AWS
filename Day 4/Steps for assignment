@@ -1,0 +1,84 @@
++LAB-3 Elastic Load Balancer
+-login to AWS account
+-html in two linux
+
++Creating ELD
+-create two linux instances use linus AMI
+-launch both instances using mobazterm
+-host html
+-check if application is deployed
+-creating load balancers
+-shutdown behavior : stop
+- protect against accidental termination
+-create a load balancer
+--application load balancer
+-name : letsupgradeELB
+-scheme: internet
+-atleast two availaibility zones
+--next
+--create new
+-all traffic
+-anywhere
+--target group
+-instance-port80-http
+--register targets
+-linux 1
+-linux 2
+(Add to registered)
+--review
+
++Go to mobaxterm
+-create 2 sessions
+-remote host = IP
+-specify username = ec2-user
+-advanced ssh
+
+#sudo su
+#yum install httpd
+#Y
+#cd /var/www/html
+#pwd
+#vi index.html
+#i
+#HTML CODE for Login Page
+
+<form action="action_page.php" method="post">
+	<div class="imgcontainer">
+		<img src="img_avatar2.png" alt="Avatar" class="avatar">
+	</div>
+
+	<div class="container">
+		<label for="uname"><b>Username</b></label>
+		<input type="text" placeholder="Enter Username" name="uname" required>
+
+		<label for="psw"><b>Password</b></label>
+		<input type="password" placeholder="Enter Password" name="psw" required>
+
+		<button type="submit">Login</button>
+		<label>
+			<input type="checkbox" checked="checked" name="remember"> Remember me
+		</label>
+	</div>
+
+	<div class="container" style="background-color: #f1f1f1">
+		<button type="button" class="cancelbtn">Cancel</button>
+		<span class="psw">Forgot <a href="#">password?</a></span>
+	</div>
+</form>
+
+#esc :wq (save and exit)
+#more index.html
+
+
+-----for second replace password with passkey
+then...
+#service httpd start
+
+/////same for 2nd linux\\\\\\\
+#USERID
+#PASS Key
+
+
+-----Load balanceer
+-dnsname
+-paste in your browser
